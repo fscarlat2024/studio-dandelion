@@ -46,6 +46,18 @@
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "10", "bestRating": "10", "ratingCount": "19" }
   }
   </script>
+  {% if faq %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for f in faq %}{ "@type": "Question", "name": "{{ f['q_' ~ lang] }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ f['a_' ~ lang] }}" } }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
 </head>
 <body>
   <header class="nav">

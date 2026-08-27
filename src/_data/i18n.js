@@ -51,7 +51,8 @@ module.exports = {
     check_booking: "Verifică disponibilitatea pe Booking",
     price_note: "Prețul variază în funcție de perioadă. Vezi prețul exact și disponibilitatea pe Booking.",
     reviews_eyebrow: "Recenzii", reviews_title: "Ce spun oaspeții",
-    reviews_of: "recenzii", reviews_on: "pe Booking", reviews_read: "Citește recenziile pe Booking"
+    reviews_of: "recenzii", reviews_on: "pe Booking", reviews_read: "Citește recenziile pe Booking",
+    faq_eyebrow: "Întrebări frecvente", faq_title: "Ce vor să știe oaspeții"
   },
   en: {
     nav_apartments: "Apartments",
@@ -103,6 +104,7 @@ module.exports = {
     check_booking: "Check availability on Booking",
     price_note: "The price varies by period. See the exact price and availability on Booking.",
     reviews_eyebrow: "Reviews", reviews_title: "What guests say",
-    reviews_of: "reviews", reviews_on: "on Booking", reviews_read: "Read the reviews on Booking"
+    reviews_of: "reviews", reviews_on: "on Booking", reviews_read: "Read the reviews on Booking",
+    faq_eyebrow: "FAQ", faq_title: "What guests want to know"
   }
 };

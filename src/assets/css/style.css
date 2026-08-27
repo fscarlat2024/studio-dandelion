@@ -110,6 +110,14 @@ header.nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srg
 .quote blockquote::before { content: "\201C"; }
 .quote blockquote::after { content: "\201D"; }
 .quote figcaption { margin-top: .5rem; font-size: .85rem; color: var(--muted); font-weight: 600; }
+/* FAQ */
+.faq-list { display: grid; gap: .8rem; max-width: 780px; }
+.faq-item { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 0 1.3rem; box-shadow: var(--shadow); }
+.faq-item summary { cursor: pointer; padding: 1.1rem 0; font-family: "Spectral", serif; font-weight: 600; font-size: 1.12rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--accent-strong); font-size: 1.5rem; line-height: 1; flex: none; }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { margin: 0 0 1.2rem; color: var(--ink-soft); line-height: 1.6; }
 .hero-veil { position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(180deg, rgba(15,22,12,.2) 0%, rgba(15,22,12,.34) 46%, rgba(12,18,10,.85) 100%); }
 .hero-in { position: relative; z-index: 2; color: #fff; padding: 3.5rem 0 3.4rem; display: grid; gap: 1.1rem; max-width: 660px; }
