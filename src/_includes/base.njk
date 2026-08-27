@@ -19,6 +19,14 @@
   <meta property="og:image" content="{{ site.url }}{{ ogImage or site.heroImage }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta name="theme-color" content="#BE8A2E">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or site.name }}">
+  <meta name="twitter:description" content="{{ description or site[lang].intro }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImage or site.heroImage }}">
+  <meta name="geo.region" content="RO-PH">
+  <meta name="geo.placename" content="Sinaia">
+  <meta name="geo.position" content="45.3489;25.5527">
+  <meta name="ICBM" content="45.3489, 25.5527">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='2' fill='%23BE8A2E'/%3E%3Cg stroke='%23BE8A2E' stroke-width='1' stroke-linecap='round'%3E%3Cline x1='12' y1='12' x2='12' y2='3'/%3E%3Cline x1='12' y1='12' x2='19' y2='7'/%3E%3Cline x1='12' y1='12' x2='21' y2='13'/%3E%3Cline x1='12' y1='12' x2='5' y2='7'/%3E%3Cline x1='12' y1='12' x2='3' y2='13'/%3E%3Cline x1='12' y1='12' x2='7' y2='20'/%3E%3Cline x1='12' y1='12' x2='17' y2='20'/%3E%3C/g%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +41,8 @@
     "address": { "@type": "PostalAddress", "streetAddress": "{{ site.address }}", "addressLocality": "Sinaia", "addressCountry": "RO" },
     "url": "{{ site.url }}",
     "image": "{{ site.url }}{{ ogImage or site.heroImage }}",
+    "geo": { "@type": "GeoCoordinates", "latitude": "45.3489", "longitude": "25.5527" },
+    "priceRange": "$$",
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "10", "bestRating": "10", "ratingCount": "19" }
   }
   </script>
