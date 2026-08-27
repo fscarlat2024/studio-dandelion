@@ -1,0 +1,119 @@
+---
+layout: base.njk
+---
+{% set t = i18n[lang] %}
+<main class="hero tall" id="top">
+  <div class="hero-slides" data-slideshow aria-hidden="true">
+    <div class="hero-slide is-active" style="background-image:url('{{ hero }}')"></div>
+    {% for g in gallery %}<div class="hero-slide" style="background-image:url('{{ g.src }}')"></div>{% endfor %}
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <span class="loc-tag">{{ site.name }} · Sinaia</span>
+    <h1>{{ name }}</h1>
+    <p class="lead">{{ tagline }}</p>
+    <div class="hero-cta">
+      <a href="#rezervare" class="btn btn-ochre btn-lg">{{ t.ap_verify }}</a>
+      <a href="#galerie" class="btn btn-ghost btn-lg">{{ t.ap_see_gallery }}</a>
+    </div>
+  </div>
+</main>
+
+<div class="wrap">
+  <div class="facts">
+    <div class="fact"><span class="fi">🏔️</span><div><b>{{ t.fact_view_t }}</b><span>{{ t.fact_view_n }}</span></div></div>
+    <div class="fact"><span class="fi">👥</span><div><b>{{ capacity }}</b><span>{{ roomType }}</span></div></div>
+    <div class="fact"><span class="fi">🍳</span><div><b>{{ "Bucătărie utilată" if lang == "ro" else "Equipped kitchen" }}</b><span>{{ "tot ce ai nevoie" if lang == "ro" else "everything you need" }}</span></div></div>
+    <div class="fact"><span class="fi">🛜</span><div><b>Wi-Fi & Smart TV</b><span>{{ "internet rapid" if lang == "ro" else "fast internet" }}</span></div></div>
+  </div>
+</div>
+
+<section class="block" id="despre">
+  <div class="wrap article-intro">
+    <span class="eyebrow">{{ t.ap_welcome }}</span>
+    <div class="rich">
+      {% for p in desc %}<p>{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if gallery and gallery.length %}
+<section class="block" id="galerie" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">{{ t.ap_gallery_eyebrow }}</span>
+      <h2>{{ t.ap_gallery_title }}</h2>
+    </div>
+    <div class="gallery-show">
+      <div class="hero-slides" data-slideshow data-arrows>
+        {% for g in gallery %}<div class="hero-slide{% if loop.first %} is-active{% endif %}" style="background-image:url('{{ g.src }}')" role="img" aria-label="{{ g['alt_' ~ lang] or name }}"></div>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="block wellness" id="facilitati">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">{{ t.fac_eyebrow }}</span>
+      <h2>{{ t.ap_fac_title }}</h2>
+      <p>{{ t.ap_fac_sub }}</p>
+    </div>
+    <div class="well-grid">
+      {% for w in site.wellness %}
+      <div class="well"><div class="ph"><img src="{{ w.img }}" alt="{{ w[lang].title }}" loading="lazy"></div><div class="cap"><b>{{ w[lang].title }}</b><span>{{ w[lang].note }}</span></div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if amenities and amenities.length %}
+<section class="block" id="dotari">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">{{ t.ap_amen_eyebrow }}</span><h2>{{ t.ap_amen_title }}</h2></div>
+    <div class="amen">
+      {% for a in amenities %}<div><span class="ck">✓</span> {{ a }}</div>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if reviewScore %}
+<section class="block" id="recenzii" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">{{ t.reviews_eyebrow }}</span><h2>{{ t.reviews_title }}</h2></div>
+    <div class="reviews-wrap">
+      <div class="review-score">
+        <div class="rs-num">{{ reviewScore }}<span>/10</span></div>
+        <div class="rs-meta">
+          <b>{{ reviewWord_ro if lang == "ro" else reviewWord_en }}</b>
+          <span class="rs-count">{{ reviewCount }} {{ t.reviews_of }} {{ t.reviews_on }}</span>
+          {% if reviewsUrl %}<a href="{{ reviewsUrl }}" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:.7rem">{{ t.reviews_read }} →</a>{% endif %}
+        </div>
+      </div>
+      {% if reviews and reviews.length %}
+      <div class="review-quotes">
+        {% for r in reviews %}<figure class="quote"><blockquote>{{ r['text_' ~ lang] or r.text }}</blockquote><figcaption>— {{ r.author }}</figcaption></figure>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="block" id="rezervare" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="band">
+      <span class="pill">{{ t.ap_book_pill }}</span>
+      <h2>{{ t.ap_book_prefix }} {{ name }}</h2>
+      <p>{{ t.ap_book_text }}</p>
+      {% if price %}<div class="price">{{ t.price_from }} <b>{{ price }}</b> {{ priceUnit }}</div>{% endif %}
+      <div class="cta-row">
+        {% if bookingUrl %}<a href="{{ bookingUrl }}" target="_blank" rel="noopener" class="btn btn-white btn-lg">{{ t.check_booking }}</a>{% endif %}
+        {% if contactWhatsapp %}<a href="https://wa.me/{{ contactWhatsapp }}" class="btn btn-outline btn-lg">{{ t.wa_btn }}</a>{% endif %}
+        {% if contactEmail %}<a href="mailto:{{ contactEmail }}" class="btn btn-outline btn-lg">{{ t.email_btn }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

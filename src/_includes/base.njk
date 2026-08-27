@@ -1,0 +1,89 @@
+{% set t = i18n[lang] %}
+{% set home = "/" if lang == "ro" else "/en/" %}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or site.name }}</title>
+  <meta name="description" content="{{ description or site[lang].intro }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% if urlRo and urlEn %}
+  <link rel="alternate" hreflang="ro" href="{{ site.url }}{{ urlRo }}">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}{{ urlEn }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ urlRo }}">
+  {% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site[lang].intro }}">
+  <meta property="og:image" content="{{ site.url }}{{ ogImage or site.heroImage }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="theme-color" content="#BE8A2E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='2' fill='%23BE8A2E'/%3E%3Cg stroke='%23BE8A2E' stroke-width='1' stroke-linecap='round'%3E%3Cline x1='12' y1='12' x2='12' y2='3'/%3E%3Cline x1='12' y1='12' x2='19' y2='7'/%3E%3Cline x1='12' y1='12' x2='21' y2='13'/%3E%3Cline x1='12' y1='12' x2='5' y2='7'/%3E%3Cline x1='12' y1='12' x2='3' y2='13'/%3E%3Cline x1='12' y1='12' x2='7' y2='20'/%3E%3Cline x1='12' y1='12' x2='17' y2='20'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "{{ site.name }}",
+    "description": "{{ site[lang].intro }}",
+    "address": { "@type": "PostalAddress", "streetAddress": "{{ site.address }}", "addressLocality": "Sinaia", "addressCountry": "RO" },
+    "url": "{{ site.url }}",
+    "image": "{{ site.url }}{{ ogImage or site.heroImage }}",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "10", "bestRating": "10", "ratingCount": "19" }
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="{{ home }}" class="brand">
+        <svg class="dlogo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="23" r="2.2" fill="var(--ochre)"/>
+          <g stroke="var(--ochre)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="24" y1="23" x2="24" y2="6"/><line x1="24" y1="23" x2="32" y2="8"/><line x1="24" y1="23" x2="38" y2="13"/><line x1="24" y1="23" x2="40" y2="21"/><line x1="24" y1="23" x2="38" y2="30"/><line x1="24" y1="23" x2="16" y2="8"/><line x1="24" y1="23" x2="10" y2="13"/><line x1="24" y1="23" x2="8" y2="21"/><line x1="24" y1="23" x2="10" y2="30"/><line x1="24" y1="23" x2="15" y2="35"/><line x1="24" y1="23" x2="33" y2="35"/>
+          </g>
+          <g fill="var(--ochre)"><circle cx="24" cy="5" r="1.4"/><circle cx="32.5" cy="7" r="1.4"/><circle cx="39" cy="12" r="1.4"/><circle cx="41" cy="21" r="1.4"/><circle cx="39" cy="31" r="1.4"/><circle cx="15.5" cy="7" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="7" cy="21" r="1.4"/><circle cx="9" cy="31" r="1.4"/><circle cx="14" cy="36" r="1.4"/><circle cx="34" cy="36" r="1.4"/></g>
+        </svg>
+        <span><b>Studio Dandelion</b><small>Sinaia</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="{{ home }}#galerie">{{ t.nav_gallery }}</a>
+        <a href="{{ home }}#facilitati">{{ t.nav_facilities }}</a>
+        <a href="{{ home }}#sinaia" class="hide-sm">{{ t.nav_sinaia }}</a>
+        <a href="{{ home }}#recenzii" class="hide-sm">{{ t.nav_reviews }}</a>
+        {% if urlRo and urlEn %}
+        <span class="lang-switch">
+          <a href="{{ urlRo }}"{% if lang == "ro" %} class="on"{% endif %}>RO</a>
+          <a href="{{ urlEn }}"{% if lang == "en" %} class="on"{% endif %}>EN</a>
+        </span>
+        {% endif %}
+        <button class="theme-toggle" id="tt" aria-label="Theme" type="button">◐</button>
+        <a href="{{ home }}#rezervare" class="btn btn-ochre nav-book">{{ t.nav_book }}</a>
+      </nav>
+    </div>
+  </header>
+
+  {{ content | safe }}
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="brand">
+          <svg class="dlogo" viewBox="0 0 48 48" style="width:28px;height:28px" fill="none" aria-hidden="true"><circle cx="24" cy="23" r="2" fill="var(--ochre)"/><g stroke="var(--ochre)" stroke-width="1.2" stroke-linecap="round"><line x1="24" y1="23" x2="24" y2="7"/><line x1="24" y1="23" x2="36" y2="12"/><line x1="24" y1="23" x2="40" y2="22"/><line x1="24" y1="23" x2="12" y2="12"/><line x1="24" y1="23" x2="8" y2="22"/><line x1="24" y1="23" x2="15" y2="35"/><line x1="24" y1="23" x2="33" y2="35"/></g></svg>
+          <span><b style="font-family:'Spectral',serif;font-size:1.05rem">Studio Dandelion</b><small style="display:block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)">{{ site.address }}</small></span>
+        </div>
+        <nav style="display:flex;gap:1.3rem;flex-wrap:wrap">
+          <a href="{{ home }}#galerie">{{ t.nav_gallery }}</a><a href="{{ home }}#facilitati">{{ t.nav_facilities }}</a><a href="{{ home }}#sinaia">{{ t.nav_sinaia }}</a><a href="{{ home }}#rezervare">{{ t.nav_book }}</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/slideshow.js" defer></script>
+</body>
+</html>
