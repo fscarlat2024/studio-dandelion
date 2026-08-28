@@ -135,7 +135,8 @@ layout: base.njk
       {% if t.price_note %}<p style="color:rgba(255,255,255,.82);font-size:.84rem;margin:.35rem 0 0;max-width:44ch">{{ t.price_note }}</p>{% endif %}
       <div class="cta-row">
         {% if bookingUrl %}<a href="{{ bookingUrl }}" target="_blank" rel="noopener" class="btn btn-white btn-lg">{{ t.check_booking }}</a>{% endif %}
-        {% if contactWhatsapp %}<a href="https://wa.me/{{ contactWhatsapp }}" class="btn btn-outline btn-lg">{{ t.wa_btn }}</a>{% endif %}
+        {% if contactWhatsapp %}<a href="https://wa.me/{{ contactWhatsapp }}" target="_blank" rel="noopener" class="btn btn-outline btn-lg">{{ t.wa_btn }}</a>{% endif %}
+        {% if phoneShow %}<a href="#" class="btn btn-outline btn-lg reveal-phone" data-tel="{{ phoneTel }}" data-show="{{ phoneShow }}" role="button">{{ t.show_phone }}</a>{% endif %}
         {% if contactEmail %}<a href="mailto:{{ contactEmail }}" class="btn btn-outline btn-lg">{{ t.email_btn }}</a>{% endif %}
       </div>
     </div>
