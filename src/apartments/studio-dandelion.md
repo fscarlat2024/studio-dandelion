@@ -67,13 +67,15 @@ gallery:
   - { src: /assets/img/apartments/studio-dandelion/overview-3.jpg, alt_ro: "Bucătărie utilată, bar cu scaune și zona de dormit", alt_en: "Equipped kitchen, bar with stools and sleeping area" }
   - { src: /assets/img/apartments/studio-dandelion/balcony.jpg, alt_ro: "Balcon cu vedere la munte", alt_en: "Balcony with a mountain view" }
 desc_ro:
-  - "Dacă simți nevoia să respiri aer curat, să te trezești cu muntele în față și să te lași învăluit de liniște — Dandelion poate fi locul tău de evadare."
-  - "Am amenajat acest spațiu cu grijă și drag, inspirată de fragilitatea și libertatea unei păpădii — simbolul viselor simple, al renașterii și al liniștii interioare. Fiecare colț spune o poveste și oferă acel „acasă” pe care uneori îl căutăm departe de agitația orașului."
-  - "Este o garsonieră luminoasă, cu vedere directă către munte, într-o zonă liniștită. Perfectă pentru cei care caută o oază de pace și un spațiu primitor în care să-și reîncarce bateriile."
+  - "Îți mai amintești cum, copil fiind, luai o păpădie în palmă, îți puneai o dorință și suflai — iar semințele plecau libere, purtând-o mai departe?"
+  - "Studio Dandelion s-a născut exact din sentimentul acela. L-am gândit ca pe un loc unde îți dai voie să te oprești: să lași agitația în urmă, să respiri adânc și să-ți pui, din nou, o dorință doar pentru tine."
+  - "Fiecare detaliu poartă povestea păpădiei — simbol al viselor simple, al libertății și al curajului blând de a lua totul de la capăt. Lumina caldă, tonurile de miere și muntele la fereastră te invită să încetinești și să te regăsești."
+  - "Aici nu vii doar să dormi. Vii să respiri altfel, să te reîncarci și să pleci mai ușor decât ai venit — ca o dorință dusă de vânt."
 desc_en:
-  - "If you feel the need to breathe fresh air, wake up facing the mountain and let yourself be wrapped in quiet — Dandelion can be your place to escape."
-  - "I arranged this space with care and love, inspired by the fragility and freedom of a dandelion — a symbol of simple dreams, renewal and inner peace. Every corner tells a story and offers that feeling of home we sometimes look for far from the busy city."
-  - "It is a bright studio, with a direct view of the mountain, in a quiet area. Perfect for those looking for an oasis of peace and a welcoming space to recharge."
+  - "Do you remember, as a child, holding a dandelion in your palm, making a wish and blowing — and the seeds drifting free, carrying it away?"
+  - "Studio Dandelion was born from that very feeling. I imagined it as a place where you let yourself stop: leave the rush behind, breathe deeply, and make a wish just for yourself again."
+  - "Every detail carries the dandelion's story — a symbol of simple dreams, of freedom, and of the gentle courage to begin again. The warm light, the honey tones and the mountain at the window invite you to slow down and find yourself."
+  - "Here you don't just come to sleep. You come to breathe differently, to recharge, and to leave lighter than you arrived — like a wish carried by the wind."
 faq:
   - q_ro: "Unde este Studio Dandelion în Sinaia?"
     a_ro: "În complexul nou Green Future Sinaia, pe Str. Walter Mărăcineanu nr. 20, la câțiva pași de centrul Sinaiei și de pârtii."
