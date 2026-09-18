@@ -1,0 +1,35 @@
+---
+layout: base.njk
+pagination:
+  data: languages
+  size: 1
+  alias: lang
+permalink: "{{ '/tur-video/' if lang == 'ro' else '/en/video-tour/' }}"
+eleventyComputed:
+  title: "{{ 'Tur video – Studio Dandelion Sinaia' if lang == 'ro' else 'Video tour – Studio Dandelion Sinaia' }}"
+  description: "{{ 'Un tur video prin Studio Dandelion, garsonieră cu vedere la munte în Green Future Sinaia.' if lang == 'ro' else 'A video walkthrough of Studio Dandelion, a mountain-view studio in Green Future Sinaia.' }}"
+  ogImage: "{{ site.videoPoster }}"
+  urlRo: "/tur-video/"
+  urlEn: "/en/video-tour/"
+---
+{% set t = i18n[lang] %}
+{% set home = "/" if lang == "ro" else "/en/" %}
+<main class="block" style="padding-top:6rem">
+  <div class="wrap">
+    <a href="{{ home }}" class="back-pill">← {{ site.name }}</a>
+    <div class="sec-head" style="margin-top:1.4rem">
+      <span class="eyebrow">{{ t.video_eyebrow }}</span>
+      <h1 style="font-family:'Spectral',Georgia,serif;font-weight:600;font-size:clamp(2rem,4.5vw,3rem);line-height:1.05;letter-spacing:-.01em">{{ t.video_title }}</h1>
+      <p>{{ t.video_sub }}</p>
+    </div>
+    <div class="video-tour" style="margin-top:1.6rem">
+      <video class="video-tour-el" controls preload="metadata" playsinline poster="{{ site.videoPoster }}">
+        <source src="{{ site.video }}" type="video/mp4">
+      </video>
+    </div>
+    <div style="text-align:center;margin-top:2.2rem;display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a href="{{ home }}#galerie" class="btn btn-ghost btn-lg">{{ t.ap_see_gallery }}</a>
+      <a href="{{ home }}#rezervare" class="btn btn-ochre btn-lg">{{ t.ap_verify }}</a>
+    </div>
+  </div>
+</main>

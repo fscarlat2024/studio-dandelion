@@ -74,7 +74,7 @@
       </a>
       <nav class="nav-links">
         <a href="{{ home }}#galerie">{{ t.nav_gallery }}</a>
-        <a href="{{ home }}#tur-video" class="hide-sm">{{ t.nav_video }}</a>
+        <a href="{{ '/tur-video/' if lang == 'ro' else '/en/video-tour/' }}" class="hide-sm">{{ t.nav_video }}</a>
         <a href="{{ home }}#facilitati">{{ t.nav_facilities }}</a>
         <a href="{{ home }}#sinaia" class="hide-sm">{{ t.nav_sinaia }}</a>
         <a href="{{ home }}#recenzii" class="hide-sm">{{ t.nav_reviews }}</a>
