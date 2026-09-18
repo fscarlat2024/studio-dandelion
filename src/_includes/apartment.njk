@@ -53,6 +53,23 @@ layout: base.njk
 </section>
 {% endif %}
 
+{% if video %}
+<section class="block" id="tur-video" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">{{ t.video_eyebrow }}</span>
+      <h2>{{ t.video_title }}</h2>
+      <p>{{ t.video_sub }}</p>
+    </div>
+    <div class="video-tour">
+      <video class="video-tour-el" controls preload="metadata" playsinline{% if videoPoster %} poster="{{ videoPoster }}"{% endif %}>
+        <source src="{{ video }}" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <section class="block wellness" id="facilitati">
   <div class="wrap">
     <div class="sec-head">
