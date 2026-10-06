@@ -18,10 +18,10 @@ phoneShow: "0742 083 362"
 phoneTel: "+40742083362"
 contactEmail: "contact@dandelionsinaia.ro"
 bookingUrl: "https://www.booking.com/hotel/ro/dandelion-studio.html"
-reviewScore: "10"
+reviewScore: "9.9"
 reviewWord_ro: "Excepțional"
 reviewWord_en: "Exceptional"
-reviewCount: 22
+reviewCount: 25
 reviewsUrl: "https://www.booking.com/hotel/ro/dandelion-studio.html#tab-reviews"
 reviews:
   - author: "Ioan, Franța"
