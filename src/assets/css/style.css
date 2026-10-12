@@ -203,7 +203,7 @@ section.block { padding: 5rem 0; }
 .well-tags span { font-size: .82rem; color: var(--ink-soft); background: var(--surface); border: 1px solid var(--line); padding: .4rem .9rem; border-radius: 999px; }
 /* tur video (vertical) */
 .video-tour { display: flex; justify-content: center; }
-.video-tour-el { width: 100%; max-width: 400px; aspect-ratio: 928 / 1664; height: auto; display: block;
+.video-tour-el { width: 100%; max-width: 820px; aspect-ratio: 16 / 9; height: auto; display: block;
   border-radius: 20px; border: 1px solid var(--line); box-shadow: var(--shadow); background: #000; object-fit: cover; }
 
 /* amenities + attractions */
