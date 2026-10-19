@@ -147,6 +147,21 @@ layout: base.njk
 </section>
 {% endif %}
 
+<section class="block" id="transport" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">{{ t.travel_eyebrow }}</span>
+      <h2>{{ t.travel_title }}</h2>
+      <p>{{ t.travel_sub }}</p>
+    </div>
+    <div class="get-grid">
+      <div class="act-card"><div class="act-ic" aria-hidden="true">🚆</div><h3>{{ t.travel_station_t }}</h3><p>{{ t.travel_station_d }}</p></div>
+      <div class="act-card"><div class="act-ic" aria-hidden="true">🚌</div><h3>{{ t.travel_local_t }}</h3><p>{{ t.travel_local_d }}</p></div>
+    </div>
+    <p class="attr-note">{{ t.travel_note }}</p>
+  </div>
+</section>
+
 {% if reviewScore %}
 <section class="block" id="recenzii" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
