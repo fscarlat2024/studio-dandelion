@@ -52,23 +52,23 @@
       "en": { "name": "Sinaia town", "desc": "The Pearl of the Carpathians - the historic casino, Dimitrie Ghica Park, charming cafes and vintage hotels at the foot of the Bucegi." } }
   ],
   "activities": [
-    { "icon": "atv",
+    { "icon": "atv", "phone": "0741 012 129", "tel": "+40741012129", "url": "https://www.inchirieriatvsinaia.ro", "urlLabel": "inchirieriatvsinaia.ro",
       "ro": { "name": "ATV & off-road Bucegi", "desc": "Ture cu ATV prin Bucegi, pornind chiar din Sinaia: Saua Dichiu, Cheile Zanoagei, Lacul Bolboci si Pestera Ialomitei. Adrenalina si priveliste, 3-6 ore." },
       "en": { "name": "ATV & off-road Bucegi", "desc": "ATV tours through the Bucegi, starting right from Sinaia: Dichiu saddle, Zanoaga gorges, Lake Bolboci and Ialomita Cave. Adrenaline and views, 3-6 hours." } },
-    { "icon": "snow",
-      "ro": { "name": "Snowmobil (iarna)", "desc": "Iarna, plimbari cu snowmobilul in zona Cabana Dichiu - trasee pentru incepatori si avansati, pe zapada proaspata." },
-      "en": { "name": "Snowmobile (winter)", "desc": "In winter, snowmobile rides in the Cabana Dichiu area - routes for beginners and advanced riders, over fresh snow." } },
-    { "icon": "cabin",
+    { "icon": "snow", "phone": "0749 772 233", "tel": "+40749772233", "url": "https://www.sinaia-atv.ro", "urlLabel": "sinaia-atv.ro",
+      "ro": { "name": "Snowmobil (iarna)", "desc": "Iarna, plimbari cu snowmobilul in zona Cabana Dichiu - trasee pentru incepatori si avansati, pe zapada proaspata. Operatorii de ATV ofera si snowmobil pe timp de iarna." },
+      "en": { "name": "Snowmobile (winter)", "desc": "In winter, snowmobile rides in the Cabana Dichiu area - routes for beginners and advanced riders, over fresh snow. The local ATV operators also run snowmobiles in winter." } },
+    { "icon": "cabin", "phone": "0735 506 111", "tel": "+40735506111", "url": "http://carpatmontana-serv.ro/cabana-dichiu/", "urlLabel": "carpatmontana-serv.ro",
       "ro": { "name": "Cabana Dichiu", "desc": "Cabana montana in Transbucegi, la circa 1800 m - punct de plecare pentru ATV si snowmobil. Iarna: sanius si priveliste superba, cu restaurant propriu." },
       "en": { "name": "Cabana Dichiu", "desc": "Mountain cabin in Transbucegi, at around 1800 m - a base for ATV and snowmobile trips. In winter: sledding and superb views, with its own restaurant." } },
     { "icon": "cable",
-      "ro": { "name": "Telecabina & schi", "desc": "Telecabina Sinaia urca la Cota 1400 si Cota 2000, cu partii pentru schi si snowboard - la cateva minute de apartament." },
-      "en": { "name": "Cable car & skiing", "desc": "The Sinaia cable car climbs to Cota 1400 and Cota 2000, with slopes for skiing and snowboarding - minutes from the apartment." } },
+      "ro": { "name": "Telecabina & schi", "desc": "Telecabina Sinaia urca la Cota 1400 si Cota 2000, cu partii pentru schi si snowboard - la cateva minute de apartament. Program orientativ 08:00-16:00, in functie de vreme." },
+      "en": { "name": "Cable car & skiing", "desc": "The Sinaia cable car climbs to Cota 1400 and Cota 2000, with slopes for skiing and snowboarding - minutes from the apartment. Roughly 08:00-16:00, weather permitting." } },
     { "icon": "hike",
       "ro": { "name": "Drumetii Bucegi", "desc": "Trasee montane spre Sfinx, Babele si Varful Omu, pornind din Sinaia cu telecabina - vara, peisaje de neuitat." },
       "en": { "name": "Bucegi hiking", "desc": "Mountain trails to the Sphinx, Babele and Omu Peak, starting from Sinaia by cable car - unforgettable summer scenery." } },
-    { "icon": "castle",
-      "ro": { "name": "Castelul Peles", "desc": "Vizita la cel mai frumos castel regal al Romaniei - tururi ghidate prin saloanele neo-renascentiste, la 10 minute de complex." },
-      "en": { "name": "Peles Castle", "desc": "A visit to Romania's most beautiful royal castle - guided tours through the neo-Renaissance halls, 10 minutes from the complex." } }
+    { "icon": "castle", "url": "https://peles.ro", "urlLabel": "peles.ro",
+      "ro": { "name": "Castelul Peles", "desc": "Vizita la cel mai frumos castel regal al Romaniei - tururi ghidate prin saloanele neo-renascentiste, la 10 minute de complex. Bilete online pe bilete.peles.ro." },
+      "en": { "name": "Peles Castle", "desc": "A visit to Romania's most beautiful royal castle - guided tours through the neo-Renaissance halls, 10 minutes from the complex. Online tickets at bilete.peles.ro." } }
   ]
 }

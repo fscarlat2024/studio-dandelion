@@ -133,6 +133,12 @@ layout: base.njk
         <div class="act-ic" aria-hidden="true">{% if a.icon == "atv" %}🏍️{% elif a.icon == "snow" %}❄️{% elif a.icon == "cabin" %}🛖{% elif a.icon == "cable" %}🚠{% elif a.icon == "hike" %}🥾{% elif a.icon == "castle" %}🏰{% endif %}</div>
         <h3>{{ a[lang].name }}</h3>
         <p>{{ a[lang].desc }}</p>
+        {% if a.phone or a.url %}
+        <div class="act-contact">
+          {% if a.phone %}<a href="tel:{{ a.tel }}">📞 {{ a.phone }}</a>{% endif %}
+          {% if a.url %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.urlLabel }} ↗</a>{% endif %}
+        </div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
