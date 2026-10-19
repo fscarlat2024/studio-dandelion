@@ -97,6 +97,50 @@ layout: base.njk
 </section>
 {% endif %}
 
+{% if site.attractions and site.attractions.length %}
+<section class="block" id="sinaia" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">{{ t.sinaia_eyebrow }}</span>
+      <h2>{{ site[lang].sinaia_title }}</h2>
+      <p>{{ t.sinaia_sub }}</p>
+    </div>
+    <div class="attr-cards">
+      {% for a in site.attractions %}
+      <div class="attr-card">
+        <img src="{{ a.img }}" alt="{{ a[lang].name }} - Sinaia" loading="lazy">
+        <span class="veil"></span>
+        <span class="cap"><b>{{ a[lang].name }}</b><span>{{ a[lang].desc }}</span></span>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="attr-note">{{ t.sinaia_attr }}</p>
+  </div>
+</section>
+{% endif %}
+
+{% if site.activities and site.activities.length %}
+<section class="block" id="activitati" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">{{ t.act_eyebrow }}</span>
+      <h2>{{ t.act_title }}</h2>
+      <p>{{ t.act_sub }}</p>
+    </div>
+    <div class="act-grid">
+      {% for a in site.activities %}
+      <div class="act-card">
+        <div class="act-ic" aria-hidden="true">{% if a.icon == "atv" %}🏍️{% elif a.icon == "snow" %}❄️{% elif a.icon == "cabin" %}🛖{% elif a.icon == "cable" %}🚠{% elif a.icon == "hike" %}🥾{% elif a.icon == "castle" %}🏰{% endif %}</div>
+        <h3>{{ a[lang].name }}</h3>
+        <p>{{ a[lang].desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="attr-note">{{ t.act_note }}</p>
+  </div>
+</section>
+{% endif %}
+
 {% if reviewScore %}
 <section class="block" id="recenzii" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">

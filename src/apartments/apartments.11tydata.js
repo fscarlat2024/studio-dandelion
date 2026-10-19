@@ -12,12 +12,12 @@ module.exports = {
     urlRo: (data) => "/",
     urlEn: (data) => "/en/",
     title: (data) => (data.lang === "ro"
-      ? `Studio Dandelion Sinaia – cazare garsonieră cu vedere la munte`
-      : `Studio Dandelion Sinaia – studio apartment with mountain view`),
+      ? `Cazare Sinaia – Studio Dandelion, garsonieră cu vedere la munte`
+      : `Accommodation Sinaia – Studio Dandelion, mountain-view studio`),
     tagline: (data) => (data.lang === "ro" ? data.tagline_ro : data.tagline_en),
     description: (data) => (data.lang === "ro"
-      ? "Cazare in Sinaia: Studio Dandelion, garsoniera moderna cu vedere la munte, cu acces la piscina, sauna si sala de fitness. Aproape de centru si de partii. Rezervari directe, fara comision."
-      : "Accommodation in Sinaia: Studio Dandelion, a modern studio with mountain view and access to pool, sauna and gym. Near the centre and ski slopes. Direct bookings, no commission."),
+      ? "Cazare in Sinaia, la pret bun: Studio Dandelion, garsoniera moderna cu vedere la munte, piscina, sauna si fitness. Aproape de centru, partii si activitati (ATV, snowmobil, telecabina). Rezervari directe, fara comision."
+      : "Affordable accommodation in Sinaia: Studio Dandelion, a modern mountain-view studio with pool, sauna and gym. Near the centre, ski slopes and activities (ATV, snowmobile, cable car). Direct bookings, no commission."),
     capacity: (data) => (data.lang === "ro" ? data.capacity_ro : data.capacity_en),
     roomType: (data) => (data.lang === "ro" ? data.roomType_ro : data.roomType_en),
     metaExtra: (data) => (data.lang === "ro" ? data.metaExtra_ro : data.metaExtra_en),
