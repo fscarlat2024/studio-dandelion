@@ -55,7 +55,7 @@ header.nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srg
 .brand .dlogo { width: 34px; height: 34px; flex: none; }
 .brand b { font-family: "Spectral", serif; font-weight: 600; font-size: 1.2rem; line-height: 1; }
 .brand small { display: block; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 3px; }
-.nav-links { margin-left: auto; display: flex; align-items: center; gap: 1.3rem; }
+.nav-links { margin-left: auto; display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap; justify-content: flex-end; row-gap: .5rem; }
 .nav-links a { text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: .94rem; }
 .nav-links a:hover { color: var(--accent-strong); }
 .nav-links a.hide-sm { display: none; }
