@@ -55,6 +55,14 @@ header.nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srg
 .brand .dlogo { width: 34px; height: 34px; flex: none; }
 .brand b { font-family: "Spectral", serif; font-weight: 600; font-size: 1.2rem; line-height: 1; }
 .brand small { display: block; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 3px; }
+.brand-logo { height: 44px; width: auto; display: block; }
+.foot-brand { flex-direction: column; align-items: flex-start; gap: 0; }
+.foot-brand .brand-logo { height: 40px; }
+/* implicit (tema dark): logo auriu; pe light: verde */
+.logo-light { display: none; }
+:root[data-theme="light"] .logo-dark { display: none; }
+:root[data-theme="light"] .logo-light { display: block; }
+@media (max-width: 480px) { .brand-logo { height: 38px; } }
 .nav-links { margin-left: auto; display: flex; align-items: center; gap: 1.3rem; }
 .nav-links a { text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: .94rem; }
 .nav-links a:hover { color: var(--accent-strong); }
