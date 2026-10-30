@@ -59,7 +59,7 @@
   </script>
   {% endif %}
 </head>
-<body>
+<body{% if site.gaId %} data-ga="{{ site.gaId }}"{% endif %}>
   <header class="nav">
     <div class="wrap nav-in">
       <a href="{{ home }}" class="brand" aria-label="Studio Dandelion">
@@ -106,9 +106,20 @@
     </div>
   </footer>
 
+  {% if site.gaId %}
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie" hidden>
+    <p class="cookie-text">{{ t.cookie_text }}</p>
+    <div class="cookie-btns">
+      <button type="button" class="btn btn-ochre" data-cookie-accept>{{ t.cookie_accept }}</button>
+      <button type="button" class="btn btn-ghost" data-cookie-reject>{{ t.cookie_reject }}</button>
+    </div>
+  </div>
+  {% endif %}
+
   <script src="/assets/js/theme.js" defer></script>
   <script src="/assets/js/slideshow.js" defer></script>
   <script src="/assets/js/reveal.js" defer></script>
   <script src="/assets/js/nav.js" defer></script>
+  {% if site.gaId %}<script src="/assets/js/cookies.js" defer></script>{% endif %}
 </body>
 </html>
