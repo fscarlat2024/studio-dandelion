@@ -1,6 +1,7 @@
 {
   // Config pentru deploy ca site static (Cloudflare Workers - static assets)
   "name": "dandelionsinaia",
+  "account_id": "78736e65e05040f02249d29ead996c64",
   "compatibility_date": "2025-01-01",
   "assets": {
     "directory": "./_site"

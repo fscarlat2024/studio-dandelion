@@ -1,0 +1,35 @@
+---
+pagination:
+  data: languages
+  size: 1
+  alias: lang
+permalink: "{{ '/rezervare/anulat/index.html' if lang == 'ro' else '/en/booking/cancelled/index.html' }}"
+layout: base.njk
+eleventyComputed:
+  title: "{{ 'Plată anulată' if lang == 'ro' else 'Payment cancelled' }} - {{ site.name }}"
+  description: "{{ 'Plata a fost întreruptă. Poți încerca din nou sau să ne contactezi.' if lang == 'ro' else 'Payment was interrupted. You can retry or contact us.' }}"
+  urlRo: "/rezervare/anulat/"
+  urlEn: "/en/booking/cancelled/"
+---
+<main class="page-hero page-hero-center">
+  <div class="wrap">
+    <div style="font-size:3.5rem;line-height:1;margin-bottom:.5rem">⏸️</div>
+    <span class="eyebrow">{{ 'Plată anulată' if lang == 'ro' else 'Payment cancelled' }}</span>
+    <h1 style="max-width:none;text-align:center;margin:1rem auto">{{ 'Plata a fost întreruptă' if lang == 'ro' else 'Payment was interrupted' }}</h1>
+    <p class="lead" style="margin:0 auto;text-align:center;max-width:52ch">{{ 'Nu-ți face griji — nu am reținut nimic de pe card. Poți încerca din nou.' if lang == 'ro' else 'No worries — nothing was charged to your card. You can try again.' }}</p>
+  </div>
+</main>
+
+<section class="block">
+  <div class="wrap" style="max-width:62ch;text-align:center">
+    <h3 style="margin-top:0">{{ 'Codul rezervării' if lang == 'ro' else 'Booking code' }}</h3>
+    <p id="booking-code" style="font-size:1.6rem;font-family:'JetBrains Mono',monospace;background:color-mix(in srgb,var(--accent) 12%,transparent);padding:.6rem 1rem;border-radius:8px;display:inline-block;letter-spacing:.08em">—</p>
+
+    <p style="margin-top:1.5rem">
+      <a href="{{ '/rezervare/' if lang == 'ro' else '/en/booking/' }}" class="btn btn-primary">{{ 'Încearcă din nou' if lang == 'ro' else 'Try again' }}</a>
+      <a href="{{ '/' if lang == 'ro' else '/en/' }}" class="btn btn-outline" style="margin-left:.6rem">{{ 'Pagina principală' if lang == 'ro' else 'Home' }}</a>
+    </p>
+  </div>
+</section>
+
+<script src="/assets/js/booking-return.js" defer></script>

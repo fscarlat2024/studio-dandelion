@@ -3,20 +3,20 @@
   /* dark editorial (implicit) */
   --ground: #141519; --surface: #1B1D22; --surface-2: #191B20;
   --ink: #ECE9E3; --ink-soft: #C7C4BE; --muted: #9C9892; --line: #2A2D34;
-  --accent: #D99A2B; --accent-strong: #EBB456; --ochre: #D99A2B; --ochre-soft: #3A2F1A;
+  --accent: #D99A2B; --accent-strong: #EBB456; --ochre: #D99A2B; --ochre-soft: #3A2F1A; --on-accent: #231703;
   --shadow: 0 1px 2px rgba(0,0,0,.4), 0 22px 50px -20px rgba(0,0,0,.72);
   --radius: 18px; --maxw: 1140px;
 }
 :root[data-theme="dark"] {
   --ground: #141519; --surface: #1B1D22; --surface-2: #191B20;
   --ink: #ECE9E3; --ink-soft: #C7C4BE; --muted: #9C9892; --line: #2A2D34;
-  --accent: #D99A2B; --accent-strong: #EBB456; --ochre: #D99A2B; --ochre-soft: #3A2F1A;
+  --accent: #D99A2B; --accent-strong: #EBB456; --ochre: #D99A2B; --ochre-soft: #3A2F1A; --on-accent: #231703;
   --shadow: 0 1px 2px rgba(0,0,0,.4), 0 22px 50px -20px rgba(0,0,0,.72);
 }
 :root[data-theme="light"] {
   --ground: #F6F3EA; --surface: #FFFFFF; --surface-2: #EFEADD;
   --ink: #1C2A1E; --ink-soft: #414B3F; --muted: #7B7A69; --line: #E3DECE;
-  --accent: #B07E20; --accent-strong: #8A6216; --ochre: #BE8A2E; --ochre-soft: #EAD8B2;
+  --accent: #B07E20; --accent-strong: #8A6216; --ochre: #BE8A2E; --ochre-soft: #EAD8B2; --on-accent: #FFFFFF;
   --shadow: 0 1px 2px rgba(28,42,30,.05), 0 18px 40px -18px rgba(28,42,30,.22);
 }
 
@@ -307,3 +307,119 @@ footer { padding: 3rem 0 2.5rem; color: var(--muted); font-size: .9rem; border-t
 .cookie-btns { display: flex; gap: .6rem; flex-wrap: wrap; }
 .cookie-btns .btn { padding: .5rem 1.1rem; font-size: .85rem; }
 @media (min-width: 560px) { .cookie-banner { left: auto; right: 1.25rem; bottom: 1.25rem; } }
+
+/* formular rezervare cross-domain cu plata card */
+.page-hero-center { text-align: center; }
+.dnd-form { display: grid; gap: 1rem; padding: 2rem; border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--surface) 70%, transparent); }
+.dnd-form .row-2 { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+.dnd-form label { display: grid; gap: .3rem; font-size: .85rem; color: var(--ink-soft); }
+.dnd-form input[type="text"], .dnd-form input[type="email"], .dnd-form input[type="tel"], .dnd-form input[type="number"], .dnd-form input[type="date"], .dnd-form textarea {
+  padding: .7rem .85rem; border: 1px solid var(--line); border-radius: 8px; background: var(--ground); color: var(--ink); font: inherit;
+}
+.dnd-form input:focus, .dnd-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.dnd-form label.chk { grid-template-columns: auto 1fr; align-items: start; gap: .5rem; }
+.dnd-form label.chk input { margin-top: .25rem; accent-color: var(--accent); }
+.dnd-form .err { padding: .7rem 1rem; border-radius: 8px; background: color-mix(in srgb, #ef4444 15%, transparent); color: #fca5a5; font-size: .88rem; }
+.dnd-form .pay-small { font-size: .78rem; color: var(--muted); text-align: center; margin: 0; }
+@media (max-width: 480px) { .dnd-form .row-2 { grid-template-columns: 1fr; } }
+
+/* widget booking cu calendar + quote + plata (portat din greenfuturesinaia) */
+.bk-section .sec-head { margin-bottom: 1.6rem; }
+.bk { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 1.4rem; align-items: start; margin-bottom: 2.2rem; }
+.bk.is-done { grid-template-columns: minmax(0, 520px); justify-content: center; }
+.bk-cal, .bk-side, .manage-card, .adm-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem; box-shadow: var(--shadow); }
+.bk-side { position: sticky; top: 84px; display: grid; gap: .8rem; }
+.bk-cal { position: relative; }
+.bk-cal-nav { position: absolute; inset: 1rem 1rem auto; display: flex; justify-content: space-between; pointer-events: none; }
+.bk-nav { pointer-events: auto; width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 1.2rem; cursor: pointer; }
+.bk-nav:disabled { opacity: .35; cursor: default; }
+.bk-months { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
+.bk-month-title { text-align: center; font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-weight: 600; line-height: 36px; margin-bottom: .6rem; text-transform: capitalize; }
+.bk-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; }
+.bk-dow { text-align: center; font-size: .72rem; color: var(--muted); font-weight: 600; padding-bottom: .3rem; text-transform: capitalize; }
+.bk-day { min-height: 48px; padding: .25rem 0; border: 0; border-radius: 8px; background: transparent; color: var(--ink); cursor: pointer; display: grid; place-content: center; line-height: 1.15; font-family: inherit; }
+.bk-day b { font-weight: 600; font-size: .92rem; }
+.bk-day small { font-size: .62rem; color: var(--muted); min-height: .75rem; }
+.bk-day:hover:not(:disabled) { background: var(--surface-2); }
+.bk-day:disabled { cursor: default; color: var(--muted); opacity: .55; }
+.bk-day.is-taken b { text-decoration: line-through; }
+.bk-day.is-range { background: var(--ochre-soft); border-radius: 0; }
+.bk-day.is-end { background: var(--accent); color: #fff; }
+.bk-day.is-end small { color: rgba(255,255,255,.85); }
+.bk-from { font-size: .95rem; color: var(--ink-soft); }
+.bk-from b { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; color: var(--ink); }
+.bk-dates { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.bk-dates > div { padding: .55rem .7rem; display: grid; }
+.bk-dates > div + div { border-left: 1px solid var(--line); }
+.bk-dates small { font-size: .7rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.bk-dates b { font-size: .92rem; font-weight: 600; }
+.bk-step { display: flex; justify-content: space-between; align-items: center; }
+.bk-step-ctl { display: flex; align-items: center; gap: .7rem; }
+.bk-step-ctl button { width: 34px; height: 34px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 1.1rem; cursor: pointer; }
+.bk-step-ctl button:disabled { opacity: .35; cursor: default; }
+.bk-step-ctl output { min-width: 1.2em; text-align: center; font-weight: 600; }
+.bk-hint { margin: 0; font-size: .88rem; color: var(--ink-soft); }
+.bk-err { margin: 0; font-size: .9rem; color: #a3271c; background: #fbeae7; padding: .55rem .7rem; border-radius: 10px; }
+.bk-lines { display: grid; gap: .3rem; font-size: .95rem; }
+.bk-lines > div { display: flex; justify-content: space-between; }
+.bk-total { border-top: 1px solid var(--line); padding-top: .5rem; margin-top: .2rem; font-weight: 600; }
+.bk-total b { font-size: 1.15rem; }
+.bk-go { width: 100%; }
+.bk-go:disabled { opacity: .5; cursor: default; transform: none; }
+.bk-notes { margin: 0; padding-left: 1.1rem; font-size: .82rem; color: var(--ink-soft); display: grid; gap: .2rem; }
+.bk-form { display: grid; gap: .7rem; }
+.bk-back { justify-self: start; background: none; border: 0; padding: 0; color: var(--accent-strong); font: inherit; font-weight: 600; cursor: pointer; }
+.bk-sum { margin: 0; font-weight: 600; }
+.bk-field { display: grid; gap: .25rem; font-size: .85rem; font-weight: 600; color: var(--ink-soft); }
+.bk-check { display: flex; gap: .55rem; align-items: flex-start; font-size: .85rem; color: var(--ink-soft); }
+.bk-check input { margin-top: .22rem; width: 18px; height: 18px; flex: none; accent-color: var(--accent); }
+.bk-trap { position: absolute; left: -9999px; width: 1px; height: 1px; }
+.bk-done { text-align: center; display: grid; gap: .8rem; justify-items: center; padding: .8rem; }
+.bk-done h3 { font-size: 1.5rem; }
+.bk-done p { margin: 0; color: var(--ink-soft); }
+.bk-tick { width: 52px; height: 52px; border-radius: 999px; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 1.5rem; }
+.bk-code { display: grid; }
+.bk-code small { color: var(--muted); }
+.bk-code b { font-size: 1.3rem; letter-spacing: .06em; }
+.manage-card { max-width: 560px; display: grid; gap: 1rem; justify-items: start; }
+.manage-card p { margin: 0; }
+.bk-day.is-end:hover:not(:disabled) { background: var(--accent); color: #fff; }
+.bk-cal, .bk-side, .manage-card, .adm-card, .cart { box-shadow: none; border-radius: var(--radius); }
+.bk-day { border-radius: 2px; }
+.bk-day.is-end, .bk-day.is-end:hover:not(:disabled) { color: var(--on-accent); }
+.bk-day.is-end small { color: var(--on-accent); }
+.bk-tick { background: var(--accent); color: var(--on-accent); }
+.bk-err { background: #3a1a16; color: #f0b8ae; border-radius: 2px; }
+.bk-discount { color: var(--accent); }
+.bk-join { margin: 0; font-size: .85rem; color: var(--ink-soft); }
+.bk-join a { color: var(--accent); }
+.bk-pay { margin: 1rem 0; padding: 0; border: 0; }
+.bk-pay legend { font-size: .9rem; color: var(--ink-soft); margin-bottom: .55rem; padding: 0; }
+.bk-pay-opt { display: grid; grid-template-columns: auto 1fr; gap: .4rem .75rem; align-items: start; padding: .75rem .9rem; border: 1px solid var(--line); border-radius: 10px; margin-bottom: .55rem; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
+.bk-pay-opt:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.bk-pay-opt:has(input:checked) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.bk-pay-opt input[type="radio"] { margin-top: .25rem; accent-color: var(--accent); }
+.bk-pay-ttl { font-weight: 500; color: var(--ink); grid-column: 2; }
+.bk-pay-opt small { grid-column: 2; font-size: .8rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* adaptare widget booking pentru brandul Dandelion (fara mentiuni Green Future Club) */
+.bk-join { display: none !important; }
+.bk { max-width: 1080px; margin-left: auto; margin-right: auto; }
+.bk-side { top: 24px; }
+@media (max-width: 860px) { .bk { grid-template-columns: 1fr; } .bk-side { position: static; } }
+
+/* input-uri widget booking elegant integrate in tema dark */
+.bk-field input, .bk-field textarea, .bk-field select {
+  width: 100%; padding: .7rem .85rem;
+  background: var(--ground); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 10px;
+  font: inherit; font-weight: 400;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.bk-field input:focus, .bk-field textarea:focus, .bk-field select:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.bk-field textarea { min-height: 86px; resize: vertical; }
+.bk-field input::placeholder, .bk-field textarea::placeholder { color: var(--muted); }
+.bk-field > span { color: var(--ink-soft); font-size: .85rem; font-weight: 500; letter-spacing: .01em; }

@@ -1,0 +1,28 @@
+---
+pagination:
+  data: languages
+  size: 1
+  alias: lang
+permalink: "{{ '/rezervare/index.html' if lang == 'ro' else '/en/booking/index.html' }}"
+layout: base.njk
+eleventyComputed:
+  title: "{{ 'Rezervă Studio Dandelion' if lang == 'ro' else 'Book Studio Dandelion' }} - {{ site.name }}"
+  description: "{{ 'Calendar live cu zilele libere, prețul exact pe perioadă aleasă și două moduri de plată: la proprietate sau cu cardul.' if lang == 'ro' else 'Live calendar with free dates, exact price for the chosen period, and two payment options: at the property or by card.' }}"
+  urlRo: "/rezervare/"
+  urlEn: "/en/booking/"
+---
+<main class="page-hero page-hero-center">
+  <div class="wrap">
+    <span class="eyebrow">{{ 'Rezervare directă' if lang == 'ro' else 'Direct booking' }}</span>
+    <h1 style="max-width:none;text-align:center;margin:1rem auto">{{ 'Alege perioada și rezervă' if lang == 'ro' else 'Choose your dates and book' }}</h1>
+    <p class="lead" style="margin:0 auto;text-align:center;max-width:52ch">{{ 'Vezi zilele libere, calculează prețul exact și alegi cum plătești: la proprietate sau acum cu cardul.' if lang == 'ro' else 'See free dates, calculate the exact price, and choose how you pay: at the property or now by card.' }}</p>
+  </div>
+</main>
+
+<section class="block" id="rezervare" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="bk" id="bk" data-slug="studio-dandelion" data-lang="{{ lang }}" hidden></div>
+  </div>
+</section>
+
+<script src="/assets/js/booking.js" defer></script>
