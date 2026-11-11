@@ -13,7 +13,7 @@ layout: base.njk
     <h1>{{ name }}</h1>
     <p class="lead">{{ tagline }}</p>
     <div class="hero-cta">
-      <a href="#rezervare" class="btn btn-ochre btn-lg">{{ t.nav_book }}</a>
+      <a href="{{ '/rezervare/' if lang == 'ro' else '/en/booking/' }}" class="btn btn-ochre btn-lg">{{ t.nav_book }}</a>
       <a href="#galerie" class="btn btn-ghost btn-lg">{{ t.ap_see_gallery }}</a>
     </div>
   </div>
