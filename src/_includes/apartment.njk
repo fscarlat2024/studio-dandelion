@@ -211,7 +211,6 @@ layout: base.njk
       {% if price %}<div class="price">{{ t.price_from }} <b>{{ price }}</b> {{ priceUnit }}</div>{% endif %}
       {% if t.price_note %}<p style="color:rgba(255,255,255,.82);font-size:.84rem;margin:.35rem 0 0;max-width:44ch">{{ t.price_note }}</p>{% endif %}
       <div class="cta-row">
-        <a href="{{ '/rezervare/' if lang == 'ro' else '/en/booking/' }}" class="btn btn-primary btn-lg">{{ t.pay_card }}</a>
         {% if contactWhatsapp %}<a href="https://wa.me/{{ contactWhatsapp }}" target="_blank" rel="noopener" class="btn btn-outline btn-lg">{{ t.wa_btn }}</a>{% endif %}
         {% if phoneShow %}<a href="#" class="btn btn-outline btn-lg reveal-phone" data-tel="{{ phoneTel }}" data-show="{{ phoneShow }}" role="button">{{ t.show_phone }}</a>{% endif %}
         {% if contactEmail %}<a href="mailto:{{ contactEmail }}" class="btn btn-outline btn-lg">{{ t.email_btn }}</a>{% endif %}
