@@ -247,7 +247,7 @@ section.block { padding: 5rem 0; }
 .attr-cards { display: grid; gap: 1.2rem; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .attr-cards { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 980px) { .attr-cards { grid-template-columns: repeat(3, 1fr); } }
-.attr-card { position: relative; display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;
+.attr-card { position: relative; display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 16/10;
   box-shadow: var(--shadow); border: 1px solid var(--line); text-decoration: none; color: #fff; }
 .attr-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .attr-card:hover img { transform: scale(1.06); }
@@ -258,6 +258,9 @@ section.block { padding: 5rem 0; }
 .attr-card .cap .go { font-size: .78rem; font-weight: 700; color: #cfeddb; margin-top: .5rem; display: inline-block; opacity: 0; transform: translateY(4px); transition: .2s ease; }
 .attr-card:hover .cap .go { opacity: 1; transform: none; }
 .attr-note { margin-top: 1.4rem; font-size: .8rem; color: var(--muted); }
+.attr-card .cap .attr-tel { display: inline-block; margin-top: .55rem; font-weight: 700; font-size: .82rem; color: #231703; background: var(--ochre); padding: .32rem .8rem; border-radius: 999px; text-decoration: none; position: relative; z-index: 3; }
+.attr-card .cap .attr-tel::before { content: "\260E"; margin-right: .35rem; }
+.act-contact span { font-size: .88rem; color: var(--muted); }
 
 /* activitati */
 .act-grid { display: grid; gap: 1.1rem; grid-template-columns: 1fr; margin-top: 1.6rem; }
