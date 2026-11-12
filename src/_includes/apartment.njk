@@ -114,15 +114,8 @@ layout: base.njk
         <span class="cap"><b>{{ a[lang].name }}</b><span>{{ a[lang].desc }}</span></span>
       </div>
       {% endfor %}
-      {% for a in site.activity_cards %}
-      <div class="attr-card act">
-        <img src="{{ a.img }}" alt="{{ a[lang].name }} - Sinaia" loading="lazy">
-        <span class="veil"></span>
-        <span class="cap"><b>{{ a[lang].name }}</b><span>{{ a[lang].desc }}</span><a class="attr-tel" href="tel:{{ a.tel }}">{{ a.show }}</a></span>
-      </div>
-      {% endfor %}
     </div>
-    <p class="attr-note">{{ t.sinaia_attr }} · {{ t.act_note }}</p>
+    <p class="attr-note">{{ t.sinaia_attr }}</p>
   </div>
 </section>
 {% endif %}
